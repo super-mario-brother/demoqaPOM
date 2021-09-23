@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class ElementsPage {
     protected WebDriver driver;
 
-    private By mainHeaderBy = By.ByClassName("main-header");
+    private By mainHeaderBy = By.className("main-header");
 
     public ElementsPage(WebDriver driver){
         this.driver = driver;
