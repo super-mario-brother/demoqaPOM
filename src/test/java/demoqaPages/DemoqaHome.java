@@ -1,6 +1,6 @@
 package demoqaPages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,13 +25,19 @@ public class DemoqaHome {
     @FindBy(css = "div.category-cards div.card.mt-4.top-card:nth-child(5) div:nth-child(1) > div.card-body")
     WebElement interactionsLink;
     //private By bookStoreAppBy = By.cssSelector("div.body-height:nth-child(2) div.home-content div.home-body div.category-cards div.card.mt-4.top-card:nth-child(6) div:nth-child(1) div.avatar.mx-auto.white svg:nth-child(1) > path:nth-child(1)");
-    @FindBy(css = "div.body-height:nth-child(2) div.home-content div.home-body div.category-cards div.card.mt-4.top-card:nth-child(6) div:nth-child(1) div.avatar.mx-auto.white svg:nth-child(1) > path:nth-child(1)")
+    @FindBy(css = "div.card.mt-4.top-card:nth-child(6)")
     WebElement bookStoreAppLink;
+    
 
     public DemoqaHome(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+    public void scrollBy(int px){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,"+px+");");
+    }
+    
     //from selenium docs, why return?
     public ElementsPage goToElementsPage(){
         elementsLink.click();
@@ -47,6 +53,13 @@ public class DemoqaHome {
     }
     public void goToAlertsFramesWindowsPage(){
         alertsFramesWindowsLink.click();
+    }
+    public void goToInteractionsPage(){
+        interactionsLink.click();
+    }
+    public BookStoreAppPage goTBookStoreAppPage(){
+        bookStoreAppLink.click();
+        return new BookStoreAppPage(driver);
     }
 
 }
