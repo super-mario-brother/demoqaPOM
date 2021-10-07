@@ -42,43 +42,49 @@ public class HomePageLinkTests {
     }
 
     @Test
-    public void elementsLinkTest(){
-        objDemoqaHome.scrollBy(300);
+    public void elementsLinkTest() throws Exception{
+        objDemoqaHome.closeAd();
+        objDemoqaHome.scrollIntoView(objDemoqaHome.getElementsLink());
         objDemoqaHome.goToElementsPage();
         MatcherAssert.assertThat(objElementsPage.getMainHeaderText(), equalTo("Elements"));
         System.out.println(objElementsPage.getMainHeaderText());
     }
     @Test
-    public void formsLinktest(){
-        objDemoqaHome.scrollBy(300);
+    public void formsLinktest() throws Exception{
+        objDemoqaHome.closeAd();
+        objDemoqaHome.scrollIntoView(objDemoqaHome.getFormsLink());
         objDemoqaHome.goToFormsPage();
         MatcherAssert.assertThat(objFormsPage.getMainHeaderText(), equalTo("Forms"));
         System.out.println(objFormsPage.getMainHeaderText());
     }
     @Test
-    public void widgetsLinkTest(){
-        objDemoqaHome.scrollBy(300);
+    public void widgetsLinkTest()throws Exception{
+        objDemoqaHome.closeAd();
+        objDemoqaHome.scrollIntoView(objDemoqaHome.getWidgetsLink());
         objDemoqaHome.goToWidgetsPage();
         MatcherAssert.assertThat(objWidgetsPage.getMainHeaderText(), equalTo("Widgets"));
         System.out.println(objWidgetsPage.getMainHeaderText());
     }
     @Test
-    public void alertsFramesWindowsLinkTest(){
-        objDemoqaHome.scrollBy(300);
+    public void alertsFramesWindowsLinkTest()throws Exception{
+        objDemoqaHome.closeAd();
+        objDemoqaHome.scrollIntoView(objDemoqaHome.getAlertsFramesWindowsLink());
         objDemoqaHome.goToAlertsFramesWindowsPage();
         MatcherAssert.assertThat(objAlertsFramesWindowsPage.getMainHeaderText(), equalTo("Alerts, Frame & Windows"));
         System.out.println(objAlertsFramesWindowsPage.getMainHeaderText());
     }
     @Test
-    public void interactionsLinkTest(){
-        objDemoqaHome.scrollBy(300);
+    public void interactionsLinkTest()throws Exception{
+        objDemoqaHome.closeAd();
+        objDemoqaHome.scrollIntoView(objDemoqaHome.getInteractionsLink());
         objDemoqaHome.goToInteractionsPage();
         MatcherAssert.assertThat(objInteractionsPage.getMainHeaderText(), equalTo("Interactions"));
         System.out.println(objInteractionsPage.getMainHeaderText());
     }
     @Test
-    public void bookStoreAppLinkTest(){
-        objDemoqaHome.scrollBy(300);
+    public void bookStoreAppLinkTest() throws Exception{
+        objDemoqaHome.closeAd();
+        objDemoqaHome.scrollToBottom();
         objDemoqaHome.goTBookStoreAppPage();
         MatcherAssert.assertThat(objBookStoreAppPage.getMainHeaderText(), equalTo("Book Store"));
         System.out.println(objBookStoreAppPage.getMainHeaderText());
