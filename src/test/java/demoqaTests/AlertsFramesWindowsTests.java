@@ -4,7 +4,9 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.hamcrest.MatcherAssert;
-import org.junit.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static org.hamcrest.Matchers.equalTo;
@@ -16,7 +18,7 @@ public class AlertsFramesWindowsTests {
 
     AlertsFramesWindowsPage objAlertsFramesWindowsPage;
 
-    @Before
+    @BeforeMethod
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -42,7 +44,7 @@ public class AlertsFramesWindowsTests {
         System.out.println(objAlertsFramesWindowsPage.getMainHeaderText());
     }
 
-    @After
+    @AfterMethod
     public void tearDown() throws Exception{
         Thread.sleep(3000);
         driver.close();

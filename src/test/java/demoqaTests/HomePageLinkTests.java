@@ -3,7 +3,9 @@ package demoqaTests;
 import demoqaPages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.hamcrest.MatcherAssert;
-import org.junit.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -22,7 +24,7 @@ public class HomePageLinkTests {
     InteractionsPage objInteractionsPage;
     BookStoreAppPage objBookStoreAppPage;
 
-    @Before
+    @BeforeMethod
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -90,7 +92,7 @@ public class HomePageLinkTests {
         System.out.println(objBookStoreAppPage.getMainHeaderText());
     }
 
-    @After
+    @AfterMethod
     public void tearDown() throws Exception{
         Thread.sleep(3000);
         driver.close();

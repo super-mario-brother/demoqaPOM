@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" parallel="tests" thread-count="2" name="C:/Users/Mariusz/IdeaProjects/demoqaPOM">
+        <classes>
+            <class name="demoqaTests.HomePageLinkTests">
+                <methods>
+                    <include name="elementsLinkTest"/>
+                    <include name="formsLinktest"/>
+                    <include name="widgetsLinkTest"/>
+                    <include name="alertsFramesWindowsLinkTest"/>
+                    <include name="interactionsLinkTest"/>
+                    <include name="bookStoreAppLinkTest"/>
+                </methods>
+            </class>
+            <class name="demoqaTests.AlertsFramesWindowsTests">
+                <methods>
+                    <include name="switchWindowsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
