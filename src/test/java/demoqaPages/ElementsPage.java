@@ -21,7 +21,7 @@ public class ElementsPage {
         return mainHeaderBy.getText();
     }
 
-    public ElementsPage textBox(){
-        return new ElementsPage(driver);
-    }
+    //public ElementsPage textBox(){
+        //return new ElementsPage(driver);
+    //}
 }

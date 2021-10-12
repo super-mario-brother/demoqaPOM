@@ -1,5 +1,6 @@
 package demoqaPages;
 
+import demoqaTests.AlertsFramesWindowsTests;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -93,14 +94,18 @@ public class DemoqaHome {
         return new FormsPage(driver);
     }
     //simpler way works as well
-    public void goToWidgetsPage() throws Exception{
+    public WidgetsPage goToWidgetsPage() throws Exception{
         widgetsLink.click();
+        return new WidgetsPage(driver);
+
     }
-    public void goToAlertsFramesWindowsPage() throws Exception{
+    public AlertsFramesWindowsPage goToAlertsFramesWindowsPage() throws Exception{
         alertsFramesWindowsLink.click();
+        return new AlertsFramesWindowsPage(driver);
     }
-    public void goToInteractionsPage()throws Exception{
+    public InteractionsPage goToInteractionsPage()throws Exception{
         interactionsLink.click();
+        return new InteractionsPage(driver);
     }
     public BookStoreAppPage goTBookStoreAppPage() throws Exception{
         bookStoreAppLink.click();

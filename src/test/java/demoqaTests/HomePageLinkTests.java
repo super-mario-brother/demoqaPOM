@@ -3,9 +3,7 @@ package demoqaTests;
 import demoqaPages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.hamcrest.MatcherAssert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -29,7 +27,9 @@ public class HomePageLinkTests {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         String baseURL = "https://demoqa.com";
-
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        driver.get(baseURL);
         objDemoqaHome = new DemoqaHome(driver);
         objElementsPage = new ElementsPage(driver);
         objFormsPage = new FormsPage(driver);
@@ -38,9 +38,6 @@ public class HomePageLinkTests {
         objInteractionsPage = new InteractionsPage(driver);
         objBookStoreAppPage = new BookStoreAppPage(driver);
 
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get(baseURL);
     }
 
     @Test
